@@ -25,10 +25,14 @@ Hopefully this will end up put back into the main trunk of Node.JS at some point
 
 
 This module supports 4 types of buffering. They are;
-* Normal in process memory buffers.
-* POSIX Shared in memory only.
-* POSIX Shared and backed by a physical file.
-* System V Shared in memory only.
+
+*	Normal in process memory buffers.
+
+*	POSIX Shared in memory only.
+
+*	POSIX Shared and backed by a physical file.
+
+*	System V Shared in memory only.
 
 
 The difference between System V and POSIX is that System V uses a numeric ID or key rather than a filename and has limits on size.
@@ -61,18 +65,28 @@ Examples.
 
 
 *Same as Buffer in Node*
+
 *	`IPCBuffer(length)` - a buffer of length
+
 *	`IPCBuffer(length,encoding)` - set encoding is one of utf8, ascii, binary, base64
+
 *	`IPCBuffer(parent,length)` - create an alias buffer for the entire parent buffer
+
 *	`IPCBuffer(parent,length,offset)` - an alias for a chunk of parent.
+
 *	`IPCBuffer(parent,length,encoding,offset)` - an alias for a chunk of parent.
 
 
 *The good stuff*
+
 *	`IPCBuffer(length,"*"+filename)` - POSIX virtual buffer. A star before the filename prevents the creation or use of a file.
+
 *	`IPCBuffer(length,filename)` - POSIX page file backed buffer.
+
 *	`IPCBuffer(length,id)` - System V Virtual buffer.
+
 *	`IPCBuffer(length,encoding,filename)` - POSIX page file backed buffer with a set encoding as above.
+
 *I think you can work out the rest of the permutations*
 
 
@@ -102,4 +116,3 @@ If someone see's fit to make a donation to the help Darron work full time on Nod
 
 
 For my next trick. **Semaphores**... and maybe fix that irritating little memory leak bug with `vm.runInContext()`.
-
