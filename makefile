@@ -5,7 +5,7 @@ all:
 
 distclean:
 	rm -rf src/build/
-	rm -rf ~*
+	rm -rf *~
 	rm -rf *.buf
 	rm -rf src/.lock-wscript
 
